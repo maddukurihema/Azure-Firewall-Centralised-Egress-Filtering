@@ -1,0 +1,28 @@
+Azure Subscription
+        │
+        ↓
+Create Resource Group
+     rg-disk-lab
+        │
+        ↓
+Create Managed Disk
+     disk-lab-01
+        │
+        ├── Initial attempt
+        │      ↓
+        │   Central India
+        │      ↓
+        │   ❌ Region policy denied
+        │
+        ↓
+Change to allowed region
+   Southeast Asia
+        │
+        ↓
+   Disk Created
+   32 GB → 64 GB
+        │
+        ↓
+Verify Resource
+   ProvisioningState
+      = Succeeded
