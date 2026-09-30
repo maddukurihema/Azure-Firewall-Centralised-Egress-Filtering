@@ -1,0 +1,105 @@
+TASK 2-2
+
+PART A : The lab expect...
+Step 4 — Add az104-user1
+
+Here's where we have a problem.
+
+Your Task 1 user:
+
+az104-user1@kluniversityin.onmicrosoft.com
+
+does not currently exist, because the Create User button was disabled.
+
+Therefore, you won't be able to complete this exact requirement:
+
+Members → add the user you created in Task 1
+
+unless the university administrator creates that user for you.
+
+So don't create the group yet if the lab requires that exact member.
+
+If you create it without the member, we'd have:
+
+AZ104-Assigned-Group
+       │
+       ├── Owner: You
+       │
+       └── Members: None
+
+But the lab expects:
+
+AZ104-Assigned-Group
+       │
+       ├── Owner: You
+       │
+       └── Member: az104-user1
+======================================================================
+PART B: Dynamic Group
+This one has an additional issue.
+
+Your instructions say:
+
+Membership type
+        ↓
+Dynamic User
+        ↓
+Property = jobTitle
+        ↓
+Operator = Equals
+        ↓
+Value = Student
+
+The resulting rule would essentially be:
+
+user.jobTitle == "Student"
+
+Then Entra automatically adds users whose jobTitle is Student.
+
+Microsoft confirms that dynamic groups can automatically add/remove users based on attributes such as department and other user properties.
+
+However, dynamic membership requires the appropriate Entra licensing. Microsoft currently documents Microsoft Entra ID P1/P2 as the requirement for dynamic membership groups, with the required licensing coverage for unique users in dynamic groups.
+
+Your tenant showed:
+
+Microsoft Entra ID Basic for EDU
+
+So we shouldn't assume your tenant has the required P1/P2 licensing available.
+
+What I recommend we do
+
+Let's test your permissions before creating anything.
+
+Go to:
+
+Entra admin center → Groups → All groups
+
+Then click:
+
++ New group
+
+Tell me what happens.
+
+There are three possibilities:
+
+🟢 A — New Group page opens
+
+Great! We'll create:
+
+AZ104-Assigned-Group
+
+and I'll guide you through each field.
+
+🟡 B — New group is disabled
+
+Then your account doesn't have the required group-management permissions, similar to the disabled Create new user button.
+
+🔴 C — New Group opens but Dynamic User isn't available
+
+Then we'll investigate the tenant's licensing/permissions before attempting Part B.
+
+One important thing
+
+Since this is your university's real Entra tenant with 159,645 users, we're going to avoid changing anything outside your lab resources. Don't modify existing groups or users, and don't assign yourself administrative roles.
+
+Go to Groups → All groups → + New group now and send me a screenshot of what you see. I'll guide you from exactly that screen.

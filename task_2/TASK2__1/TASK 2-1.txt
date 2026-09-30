@@ -1,0 +1,76 @@
+TASK 2-1
+
+Ah, I can see the issue from your screenshot. The “Create new user” option is greyed out/disabled. This is almost certainly a permissions issue, not a problem with the page you're on.
+
+Microsoft's current documentation says that creating a Microsoft Entra user requires at least the User Administrator role (or Global Administrator).
+
+And your screenshot is actually useful: you're in the correct Users → All users page, but your account doesn't currently have permission to create an internal user.
+
+What this means for your lab
+
+Your tenant is:
+
+K L University
+Tenant ID:
+808cc83e-a546-47e7-a03f-73a1ebba24f3
+
+and the available .onmicrosoft.com domain is:
+
+kluniversityin.onmicrosoft.com
+
+So the intended account would be:
+
+az104-user1@kluniversityin.onmicrosoft.com
+
+But you should not try to work around the disabled button.
+
+Check your current role
+
+In the Entra admin center, search for:
+
+Roles and administrators
+
+Then open it.
+
+Search for:
+
+User Administrator
+
+Open User Administrator and check whether your account appears under the assigned members.
+
+You can also check:
+
+Entra ID → Users → your account → Assigned roles
+
+If you don't have User Administrator or Global Administrator, that's why the button is unavailable. Microsoft specifically requires User Administrator or higher to create users.
+
+If you are only a student account
+
+Because this is the K L University tenant, rather than a newly created personal tenant, your college administrators control the Entra directory. You may be able to use Azure resources through Azure for Students without having permission to administer the university's Entra directory.
+
+So you have two possibilities:
+
+If your college instructor/admin gave you an admin account:
+Ask them to assign your account the User Administrator role for this lab.
+
+If they did not:
+You cannot complete this exact user-creation step in this tenant with your current permissions. The proper solution is for the instructor/tenant administrator to provide an appropriate lab tenant/account or perform the user creation.
+
+Don't assign yourself a role or modify existing university users/groups just to make the lab work.
+
+One thing we can check right now
+
+Click your profile icon in the top-right corner of the Entra portal and tell me what account/email you're signed in with (you can mask the personal part), for example:
+
+xxxxx@kluniversity.in
+
+Then go to:
+
+Entra ID → Roles and administrators → User Administrator
+
+and tell me whether you can open it and whether your account is listed.
+
+If you show me that screen, I'll tell you exactly what the next step is.
+==================================================================================================
+
+
