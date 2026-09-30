@@ -1,0 +1,19 @@
+Existing Resource Group
+        │
+        ├── Virtual Machine
+        │
+        └── Storage Account
+                │
+                │ Move Resource
+                ↓
+        New Resource Group
+        rg-production
+                │
+                └── Storage Account
+                        │
+                        │ Apply Delete Lock
+                        ↓
+                 🔒 Resource Protected
+                        │
+                        ↓
+                 Cannot Delete
