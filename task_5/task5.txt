@@ -1,0 +1,17 @@
+rg-task5-storage
+│
+├── az104-task5-vm
+│
+└── az104st76955
+    │
+    ├── Blob Storage
+    │   └── lab-container
+    │       └── sample.txt
+    │
+    ├── Azure Files
+    │   └── lab-files
+    │       └── azurefile.txt
+    │
+    └── RBAC
+        └── Azure Cloud Shell
+            └── Storage Blob Data Contributor
